@@ -75,11 +75,24 @@ a { color: inherit; }
 .about-copy h2 { margin: .5rem 0 1.4rem; }
 .about-copy > p:not(.eyebrow) { max-width: 550px; color: #5e645c; }
 .about-copy .about-lead { color: var(--ink) !important; font-size: 1.08rem; }
-.metrics { display: flex; gap: clamp(18px, 4vw, 55px); margin-top: 2rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
-.metrics div { display: grid; gap: 5px; }
-.metrics strong { font-size: 2.25rem; font-weight: 800; line-height: 1; }
-.metrics strong span { color: var(--orange); font-size: 1.2rem; }
-.metrics small { color: var(--muted); font: .59rem var(--mono); }
+.about-project-chart { margin-top: 2rem; padding: 20px 22px 14px; border: 1px solid var(--line); background: rgba(248,247,242,.58); }
+.about-chart-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 1rem; }
+.about-chart-heading .eyebrow { margin-bottom: 8px; }
+.about-chart-heading h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
+.about-chart-heading > strong { display: grid; color: var(--orange); font-size: 1.7rem; line-height: 1; text-align: right; }
+.about-chart-heading > strong small { margin-top: 6px; color: var(--muted); font: .55rem var(--mono); }
+.about-chart-canvas { position: relative; height: 190px; margin-top: 12px; }
+.about-chart-canvas canvas { max-width: 100%; }
+.about-process { padding: 78px 0 94px; background: var(--paper); }
+.about-process .section-top { padding-bottom: 12px; }
+.about-process-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; padding: 28px 0 36px; }
+.about-process-heading h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 800; letter-spacing: -.04em; }
+.about-process-heading > p { max-width: 340px; margin: 0 0 6px; color: var(--muted); }
+.process-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin: 0; padding: 0; list-style: none; }
+.process-steps li { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding-top: 17px; border-top: 1px solid var(--line); }
+.process-steps li > span { margin-bottom: 1.1rem; color: var(--orange); font: .65rem var(--mono); }
+.process-steps strong { font-size: .95rem; }
+.process-steps p { max-width: 220px; margin: .4rem 0 0; color: var(--muted); font-size: .82rem; }
 .contact-section { padding: 85px 0; background: var(--orange); }
 .contact-section .eyebrow { color: var(--ink); }
 .contact-section .section-top { border-color: rgba(32,36,33,.35); }
@@ -128,9 +141,13 @@ a { color: inherit; }
 	.project-item:first-child .project-card, .project-card { aspect-ratio: 1.2; }
 	.about-visual img { height: 360px; }
 	.about-copy { padding-left: 12px; }
-	.metrics { justify-content: space-between; gap: 10px; }
-	.metrics strong { font-size: 1.8rem; }
-	.metrics small { max-width: 100px; font-size: .52rem; }
+	.about-chart-heading { align-items: flex-start; }
+	.about-chart-heading h3 { font-size: .9rem; }
+	.about-chart-heading > strong { font-size: 1.45rem; }
+	.about-chart-canvas { height: 175px; }
+	.about-process { padding: 65px 0; }
+	.about-process-heading { align-items: flex-start; flex-direction: column; gap: .8rem; padding: 25px 0 30px; }
+	.process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; }
 	.contact-layout { grid-template-columns: 1fr; gap: 40px; }
 	.site-footer .container { align-items: flex-start; flex-direction: column; }
 }

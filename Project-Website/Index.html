@@ -58,8 +58,16 @@
 			<div class="col-lg-5 about-visual"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=82" alt="Desainer dan engineer berkolaborasi di meja kerja" loading="lazy"><span>FIELD NOTES / 001</span></div>
 			<div class="col-lg-7 about-copy"><div class="section-top"><p class="eyebrow">03 / About the studio</p></div><h2>Curious minds.<br><em>Solid outcomes.</em></h2><p class="about-lead">Kami adalah studio independen yang senang bekerja di persimpangan desain, teknologi, dan industri.</p>
 				<p>Setiap proyek dimulai dengan mendengarkan orang yang menggunakannya. Lalu kami merancang sistem yang tahan dipakai, mudah dipahami, dan punya alasan untuk ada.</p>
-				<div class="metrics"><div><strong>12<span>+</span></strong><small>Proyek lintas disiplin</small></div><div><strong>04</strong><small>Tahun terus bereksperimen</small></div><div><strong>100<span>%</span></strong><small>Rasa ingin tahu</small></div></div></div>
+				<div class="about-project-chart">
+					<div class="about-chart-heading"><div><p class="eyebrow">Capaian / 2026</p><h3>Proyek selesai per kuartal</h3></div><strong><span id="completedProjectTotal">35</span><small>proyek selesai</small></strong></div>
+					<div class="about-chart-canvas"><canvas id="projectChart" role="img" aria-label="Grafik jumlah proyek yang selesai pada tahun 2026: Q1 7 proyek, Q2 12 proyek, Q3 8 proyek, Q4 8 proyek; total 35 proyek.">Proyek selesai pada tahun 2026: Q1 7, Q2 12, Q3 8, Q4 8. Total 35 proyek.</canvas></div>
+				</div>
+			</div>
 		</div></div></section>
+		<section class="about-process" aria-labelledby="processTitle"><div class="container"><div class="section-top"><p class="eyebrow">How we work</p><span class="section-note">Dari gagasan ke rancangan.</span></div>
+			<div class="about-process-heading"><h2 id="processTitle">Tahapan konseptual.</h2><p>Empat langkah untuk mengubah kebutuhan menjadi solusi yang siap dievaluasi.</p></div>
+			<ol class="process-steps"><li><span>01</span><strong>Pahami kebutuhan</strong><p>Petakan fungsi, material, dan tujuan.</p></li><li><span>02</span><strong>Rancang solusi</strong><p>Susun konsep yang menjawab kebutuhan.</p></li>
+				<li><span>03</span><strong>Uji bentuk &amp; fungsi</strong><p>Evaluasi konsep sebelum penyempurnaan.</p></li><li><span>04</span><strong>Sempurnakan rancangan</strong><p>Siapkan spesifikasi untuk langkah berikutnya.</p></li></ol></div></section>
 		<section id="contact" class="contact-section"><div class="container"><div class="section-top"><p class="eyebrow">04 / Contact</p><span class="section-note">Jakarta, Indonesia · UTC+7</span></div>
 			<div class="contact-layout"><div><h2>Have a good<br><em>problem?</em></h2><p>Beritahu kami apa yang sedang Anda bangun. Kami akan membalas secepatnya.</p><a class="contact-email" href="mailto:halo@wahidstudio.id">halo@wahidstudio.id <i class="bi bi-arrow-up-right"></i></a></div>
 				<form id="contactForm" data-recipient="halo@wahidstudio.id"><div class="row g-3"><div class="col-sm-6"><label for="name">Nama</label><input id="name" name="name" class="form-control" placeholder="Nama lengkap" required></div>
@@ -71,7 +79,52 @@
 	<footer class="site-footer"><div class="container"><a class="footer-brand" href="#home">W<span>.</span> WAHID STUDIO</a><span>Independent by nature. Industrial by design.</span><a href="#home">Kembali ke atas ↑</a></div></footer>
 	<div class="modal fade" id="projectModal" tabindex="-1" aria-labelledby="modalTitle" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><p class="eyebrow">PROJECT NOTES</p><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button></div><div class="modal-body"><h2 id="modalTitle"></h2><p id="modalDescription"></p></div></div></div></div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
 	<script>
+		const projectChartCanvas = document.querySelector('#projectChart');
+		const completedProjectCounts = [7, 12, 8, 8];
+		const completedProjectTotal = completedProjectCounts.reduce((total, count) => total + count, 0);
+		document.querySelector('#completedProjectTotal').textContent = completedProjectTotal;
+		projectChartCanvas.setAttribute('aria-label', `Grafik proyek selesai pada 2026: Q1 ${completedProjectCounts[0]}, Q2 ${completedProjectCounts[1]}, Q3 ${completedProjectCounts[2]}, dan Q4 ${completedProjectCounts[3]}; total ${completedProjectTotal} proyek.`);
+		const projectChartStyles = getComputedStyle(document.documentElement);
+		const projectChartAccent = projectChartStyles.getPropertyValue('--orange').trim();
+		const projectChart = new Chart(projectChartCanvas, {
+			type: 'bar',
+			data: {
+				labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+				datasets: [{
+					label: 'Proyek selesai',
+					data: completedProjectCounts,
+					backgroundColor: projectChartAccent,
+					borderRadius: 5,
+					maxBarThickness: 38
+				}]
+			},
+			options: {
+				responsive: true,
+				maintainAspectRatio: false,
+				animation: false,
+				plugins: {
+					legend: { display: false },
+					tooltip: { callbacks: { label: context => `${context.raw} proyek selesai` } }
+				},
+				scales: {
+					x: {
+						grid: { display: false },
+						border: { display: false },
+						ticks: { color: projectChartStyles.getPropertyValue('--muted').trim(), font: { family: 'IBM Plex Mono, monospace', size: 10 } }
+					},
+					y: {
+						beginAtZero: true,
+						max: 14,
+						ticks: { stepSize: 2, color: projectChartStyles.getPropertyValue('--muted').trim(), font: { family: 'IBM Plex Mono, monospace', size: 10 } },
+						grid: { color: 'rgba(32,36,33,.1)' },
+						border: { display: false }
+					}
+				}
+			}
+		});
+		window.addEventListener('resize', () => projectChart.resize());
 		// Filter karya dan isi modal dari metadata pada kartu yang dipilih.
 		document.querySelectorAll('.filter-btn').forEach(button => button.addEventListener('click', () => {
 			document.querySelectorAll('.filter-btn').forEach(item => { item.classList.remove('active'); item.setAttribute('aria-pressed', 'false'); });
