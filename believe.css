@@ -28,15 +28,15 @@ a { color: inherit; }
 	background-size: cover; background-position: center; background-repeat: no-repeat;
 }
 .hero-slide-one {
-	background-image: linear-gradient(90deg, rgba(255,255,255,.2), rgba(255,255,255,.04)), url("assets%20background%203.jpg");
+	background-image: linear-gradient(90deg, rgba(255,255,255,.2), rgba(255,255,255,.04)), url("assets/assets%20background%203.jpg");
 }
 .hero-slide-two {
 	background-color: #202124;
-	background-image: linear-gradient(90deg, rgba(15,17,20,.88), rgba(15,17,20,.64) 48%, rgba(15,17,20,.12)), url("assets%20background%202.jpg");
+	background-image: linear-gradient(90deg, rgba(15,17,20,.88), rgba(15,17,20,.64) 48%, rgba(15,17,20,.12)), url("assets/assets%20background%202.jpg");
 }
 .hero-slide-three {
 	background-color: #071116;
-	background-image: linear-gradient(90deg, rgba(5,14,19,.82), rgba(5,14,19,.58) 48%, rgba(5,14,19,.08)), url("assets%20background.jpg");
+	background-image: linear-gradient(90deg, rgba(5,14,19,.82), rgba(5,14,19,.58) 48%, rgba(5,14,19,.08)), url("assets/assets%20background.jpg");
 }
 .hero-slide-two h2, .hero-slide-three h2 { color: #fff; }
 .hero-slide-two .hero-copy, .hero-slide-three .hero-copy { color: rgba(255,255,255,.88); }
