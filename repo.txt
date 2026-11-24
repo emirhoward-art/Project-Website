@@ -1,0 +1,21 @@
+INFORMASI REPOSITORI
+
+Nama Project: MECHNOVA ENGINEERING
+
+Framework: Laravel 12
+
+Bahasa Pemrograman:
+- PHP
+- HTML
+- CSS
+- JavaScript
+
+Database: MySQL
+
+Nama Database: mechnova_db
+
+Repository GitHub:
+https://github.com/kanisiusnikolas/Project-Laravel.git
+
+Deskripsi:
+Website company profile CV MECHNOVA ENGINEERING yang menyediakan informasi perusahaan, layanan engineering, portofolio proyek, dan formulir kontak yang terhubung dengan database MySQL.
