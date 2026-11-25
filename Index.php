@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="id">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Portofolio dan layanan kreatif.">
+	<title>Portofolio | Nama Anda</title>
+
+	<!-- Bootstrap: framework utama untuk layout, grid, navigasi, carousel, dan form. -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="believe.css">
+</head>
+<body>
+	<!-- Navbar: ubah nama/logo dan tautan sesuai identitas portofolio Anda. -->
+	<nav class="navbar navbar-expand-lg navbar-light site-navbar">
+		<div class="container">
+			<a class="brand-mark" href="#home" aria-label="Kembali ke Home">Logo</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Buka navigasi">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainNavigation">
+				<div class="navbar-nav ml-auto align-items-lg-center gap-lg-3">
+					<a class="nav-link" href="#home">Home</a>
+					<a class="nav-link" href="#services">Services</a>
+					<a class="nav-link" href="#about">About</a>
+					<a class="nav-link" href="#contact">Contact</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<main>
+		<!-- Hero: ganti teks dan tambahkan aset visual milik Anda di tiap slide. -->
+		<div id="home" class="carousel slide hero-carousel" data-ride="carousel">
+			<div class="carousel-indicators">
+				<button type="button" data-target="#home" data-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				<button type="button" data-target="#home" data-slide-to="1" aria-label="Slide 2"></button>
+				<button type="button" data-target="#home" data-slide-to="2" aria-label="Slide 3"></button>
+			</div>
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<div class="hero-slide hero-slide-one">
+						<div class="container hero-content">
+							<p class="hero-kicker">Portofolio Kreatif</p>
+							<h1>Karya yang punya tujuan.</h1>
+							<p class="hero-copy">Saya Nama Anda, membantu ide tumbuh menjadi pengalaman digital.</p>
+							<a class="btn btn-primary" href="#contact">Mari berbincang</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="hero-slide hero-slide-two">
+						<div class="container hero-content">
+							<p class="hero-kicker">Strategi · Desain · Pengembangan</p>
+							<h2>Proses yang sederhana, hasil yang berarti.</h2>
+							<p class="hero-copy">Ceritakan kebutuhan Anda dan kita mulai dari sana.</p>
+							<a class="btn btn-primary" href="#services">Lihat layanan</a>
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="hero-slide hero-slide-three">
+						<div class="container hero-content">
+							<p class="hero-kicker">Terbuka untuk kolaborasi</p>
+							<h2>Ide berikutnya bisa dimulai di sini.</h2>
+							<p class="hero-copy">Jelajahi beberapa layanan dan hubungi saya.</p>
+							<a class="btn btn-primary" href="#contact">Hubungi saya</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button" data-target="#home" data-slide="prev" aria-label="Slide sebelumnya">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			</button>
+			<button class="carousel-control-next" type="button" data-target="#home" data-slide="next" aria-label="Slide berikutnya">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<!-- Services: ganti contoh teks dengan layanan dan data yang benar. -->
+		<?php 
+		include ("services.php"); 
+		?>
+
+		<!-- About: isi dengan cerita, pengalaman, dan capaian Anda sendiri. -->
+		<?php 
+		include ("about.php"); 
+		?>
+
+		<!-- Contact: form ini belum tersambung ke backend/database. -->
+		<section id="contact" class="section-band contact-section">
+			<div class="container">
+				<div class="section-heading">
+					<span class="section-badge">Contact</span>
+					<h2 class="sr-only">Hubungi saya</h2>
+				</div>
+				<!-- TODO database: sambungkan action/method ke endpoint backend untuk menyimpan pesan. -->
+				<form class="contact-form" action="#" method="post">
+					<div class="row g-3">
+						<div class="col-12 col-md-6">
+							<label class="form-label" for="contactName">Nama</label>
+							<input class="form-control" id="contactName" name="name" type="text" placeholder="Nama Anda" autocomplete="name" required>
+						</div>
+						<div class="col-12 col-md-6">
+							<label class="form-label" for="contactEmail">Email</label>
+							<input class="form-control" id="contactEmail" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+						</div>
+						<div class="col-12">
+							<label class="form-label" for="contactMessage">Pesan</label>
+							<textarea class="form-control" id="contactMessage" name="message" rows="5" placeholder="Ceritakan tentang kebutuhan atau ide Anda..." required></textarea>
+						</div>
+						<div class="col-12">
+							<button class="btn btn-primary" type="submit">Kirim</button>
+							<!-- TODO: tampilkan status berhasil/gagal setelah backend tersedia. -->
+						</div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</main>
+
+	<!-- Footer: tambahkan hak cipta dan tautan media sosial Anda. -->
+	<footer class="site-footer">
+		<div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+			<a class="footer-brand" href="#home">Nama Anda</a>
+			<p class="mb-0">© <span id="currentYear">2026</span> Nama Anda. Dibuat dengan sepenuh hati.</p>
+			<a href="#home">Kembali ke atas ↑</a>
+		</div>
+	</footer>
+
+	<!-- Bundle Bootstrap menyediakan interaksi navbar dan carousel. -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+	<script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
