@@ -78,69 +78,14 @@
 		</div>
 
 		<!-- Services: ganti contoh teks dengan layanan dan data yang benar. -->
-		<section id="services" class="section-band services-section">
-			<div class="container">
-				<div class="section-heading">
-					<span class="section-badge">Services</span>
-					<h2 class="sr-only">Layanan</h2>
-				</div>
-				<!-- TODO database: render kartu dari endpoint/API layanan, bukan data statis ini. -->
-				<div class="row g-4">
-					<div class="col-12 col-md-4">
-						<div class="service-item h-100">
-							<span class="service-number">01</span>
-							<h3>Desain Web</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Desain responsif yang mudah digunakan.</p>
-						</div>
-					</div>
-					<div class="col-12 col-md-4">
-						<div class="service-item h-100">
-							<span class="service-number">02</span>
-							<h3>Pengembangan</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pengalaman digital yang dirancang dengan cermat.</p>
-						</div>
-					</div>
-					<div class="col-12 col-md-4">
-						<div class="service-item h-100">
-							<span class="service-number">03</span>
-							<h3>Identitas Visual</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sistem visual yang konsisten dan berkarakter.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<?php 
+		include ("services.php"); 
+		?>
 
 		<!-- About: isi dengan cerita, pengalaman, dan capaian Anda sendiri. -->
-		<section id="about" class="section-band about-section">
-			<div class="container">
-				<div class="section-heading">
-					<span class="section-badge">About</span>
-					<h2 class="sr-only">Tentang saya</h2>
-				</div>
-				<p class="about-intro">Saya percaya karya yang baik berawal dari rasa ingin tahu, kolaborasi, dan perhatian pada detail.</p>
-				<div class="row align-items-center g-4">
-					<div class="col-12 col-md-6">
-						<div class="about-copy">
-							<p class="eyebrow">Sedikit tentang saya</p>
-							<h3>Mengubah tantangan menjadi sesuatu yang berguna.</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<!-- TODO: tambahkan tautan CV, pengalaman, atau proyek pilihan. -->
-						</div>
-					</div>
-					<div class="col-12 col-md-6">
-						<div class="performance-panel">
-							<h3>Performance</h3>
-							<p>Proses yang terus berkembang.</p>
-							<!-- Visual gelombang CSS sementara; eksplorasi dengan data/animasi Anda. -->
-							<div class="wave-visual" role="img" aria-label="Visualisasi gelombang performa">
-								<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<?php 
+		include ("about.php"); 
+		?>
 
 		<!-- Contact: form ini belum tersambung ke backend/database. -->
 		<section id="contact" class="section-band contact-section">
